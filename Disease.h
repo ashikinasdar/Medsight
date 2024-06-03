@@ -1,4 +1,4 @@
-#ifdef DISEASE_H
+#ifndef DISEASE_H
 #define DISEASE_H
 #include "Symptom.h"
 #include <iostream>
@@ -22,7 +22,7 @@ class Disease {
 
     void addDisease ();
     void addSymptom (Symptom*);
-    void printsymptom ();
+    void printSymptoms ();
 
         
 };
