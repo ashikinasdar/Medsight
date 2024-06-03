@@ -2,6 +2,7 @@
 #define SYMPTOM_H
 #include <string>
 #include <iostream>
+using namespace std;
 
 class Symptom {
     private : 
