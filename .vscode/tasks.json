@@ -9,6 +9,11 @@
             "args": [
                 "-g",
                 "${fileBasename}",
+                "Disease.cpp",
+                "main.cpp",
+                "MedHistory.cpp",
+                "Symptom.cpp",
+                "UserInfo.cpp",
                 "-o",
                 "${fileBasenameNoExtension}",
             ],
