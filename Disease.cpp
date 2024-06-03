@@ -1,9 +1,11 @@
-#include <Disease.h>
-#include <Symptom.h>
+#include "Disease.h"
+#include "Symptom.h"
 #include <iostream>
 #include <string>
 
-Disease ::Disease(string nd = "", string des = "") {
+using namespace std;
+
+Disease :: Disease(string nd = "", string des = "") {
         nameDisease = nd;
         desc = des;
         symptomCount = 0;
@@ -31,7 +33,7 @@ void Disease ::  addDisease (){
         cin >> nameDisease;
 } 
 
-void Disease ::  addSymptom( Symptom *symp ) {
+void Disease ::  addSymptom(Symptom *symp ) {
         if (symptomCount < 100) {
             symptom[symptomCount] = symp;
             symptomCount++;
