@@ -219,6 +219,7 @@ int main() {
 
         if (!found) {
             cout << "Disease not found." << endl;
+            cout << "Hello";
         }
 
 
