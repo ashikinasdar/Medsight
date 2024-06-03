@@ -141,8 +141,9 @@ int main() {
     }
 
     system ("pause");
-    system ("");
-    
+    system ("")
+
+;
     cout << "---------- to test : add new user medical history and display medical history ----------"
 
     while (contim == 'n') {
@@ -219,7 +220,6 @@ int main() {
 
         if (!found) {
             cout << "Disease not found." << endl;
-            cout << "Hello";
         }
 
 
@@ -254,4 +254,3 @@ int main() {
 
     return 0;
 }
-
