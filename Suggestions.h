@@ -1,5 +1,5 @@
-#ifndef MODULE3_H
-#define MODULE3_H
+#ifndef SUGGESTIONS_H
+#define SUGGESTIONS_H
 
 #include<iostream>
 #include<string>
