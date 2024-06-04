@@ -20,6 +20,8 @@ class MedHistory{
     string getMedicine ();
     string getAllergic ();
 
+    void addMedHis();
+
 };
 
 

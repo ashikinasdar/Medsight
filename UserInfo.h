@@ -1,4 +1,3 @@
-// class specification file
 #ifndef USERINFO_H
 #define USERINFO_H
 #include "MedHistory.h"
@@ -17,11 +16,10 @@ class UserInfo {
 
     public :
     
-    UserInfo(string, string, string, string, int, MedHistory*, Symptom*);
+    UserInfo(string , string, string, string, int, MedHistory*, Symptom*);
     string getNoPhone ();
-    void addExistDisease();
-    void addUserinfo();
-    void displayUserinfo ();
+    void addUserInfo();
+    void displayUserInfo ();
 
 };
 

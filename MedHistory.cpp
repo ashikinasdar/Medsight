@@ -10,14 +10,33 @@ MedHistory :: MedHistory(string ed, string med, string all) {
         allergic = all;
     }
 
-void MedHistory :: setExistDisease (string ed){ existDisease = ed;}
+void MedHistory ::setExistDisease (string ed){ existDisease = ed;}
 
-void MedHistory :: setMedicine (string med){ medicine = med;}
+void MedHistory ::setMedicine (string med){ medicine = med;}
 
-void MedHistory :: setAllergic (string all){allergic = all;}
+void MedHistory ::setAllergic (string all){allergic = all;}
 
-string MedHistory :: getExistDisease (){return existDisease;}
+string MedHistory ::getExistDisease (){return existDisease;}
     
-string MedHistory :: getMedicine (){return medicine;}
+string MedHistory ::getMedicine (){return medicine;}
 
-string MedHistory :: getAllergic (){return allergic;}
+string MedHistory ::getAllergic (){return allergic;}
+
+void MedHistory ::addMedHis() {
+     char nAllergic;
+        cout << "Enter disease name: ";
+        cin >> existDisease;
+        setExistDisease(existDisease);
+        cout << "Enter medicine consume: ";
+        cin >> medicine;
+        setMedicine(medicine);
+        
+        cout << "Do you have any allergic?(y/n) :";
+        cin >> nAllergic;
+
+        if (nAllergic == 'y') {
+            cout << "Enter allergic to what: ";
+            cin >> allergic;
+            setAllergic(allergic);
+        }
+}

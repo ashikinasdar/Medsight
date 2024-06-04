@@ -2,7 +2,6 @@
 #include "MedHistory.h"
 #include "Symptom.h"
 #include "Disease.h"
-#include "Suggestions.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -10,14 +9,13 @@ using namespace std;
 int main() {
     
 
-    Userinfo person [100];
-    char nuser, ndisease, nMedHis, conti = 'n', contim = 'n', contid = 'n', contis = 'n';
+    UserInfo person[100];
+    char nuser, ndisease, conti = 'n', contid = 'n', contis = 'n';
     string phonenum, nsym, edisease; 
-    int userCount =0, numsym, numnewdisease = 11;
-    //Symptom symptom;
+    int userCount = 0, numsym, numnewdisease = 11;
 
-    Disease diseases[100]= {Disease("Diarrhea", "cirit birit"), Disease("Malaria", "hdddhhd"), Disease("Common cold", "d"), Disease("TB", "d"),Disease("Pneumonia", "d"),
-    Disease("Influenza"), Disease("Cellulitis"), Disease("Chicken Pox"), Disease("Migraine"), Disease("Food Poisoning"), Disease("Asthma")};
+    Disease diseases[100]= {Disease("Diarrhea", "cirit birit"), Disease("Malaria", "hdddhhd"), Disease("Common cold", "d"), Disease("TB", "d"), Disease("Pneumonia", "d"),
+    Disease("Influenza", "d"), Disease("Cellulitis","d"), Disease("Chicken Pox","d"), Disease("Migraine","d"), Disease("Food Poisoning","d"), Disease("Asthma","d")};
 
 
 
@@ -103,7 +101,7 @@ int main() {
     diseases[10].addSymptom(&shortnessOfBreath);
 
 
-    cout << "---------- to test : add new user and display user info ---------- "<<endl;
+    cout << "---------- to test : add new user and display user info ---------- "<< endl;
 
     while (conti == 'n') {
         cout << "Are you a new user? (y/n): ";
@@ -112,7 +110,7 @@ int main() {
 
         if (nuser == 'y') {
             if (userCount < 100) {
-                person[userCount].addUserinfo();
+                person[userCount].addUserInfo();
                 userCount++;
             } else {
                 cout << "User limit reached." << endl;
@@ -121,13 +119,13 @@ int main() {
         }
         else {
             cout << "Enter your phone number: ";
-            cin >> phonenum;
+            getline (cin, phonenum);
             cin.ignore();  
 
             bool found = false;
             for (int j = 0; j < userCount; j++) {
                 if (phonenum == person[j].getNoPhone()) {
-                    person[j].displayUserinfo();
+                    person[j].displayUserInfo();
                     found = true;
                     break;
                 }
@@ -142,19 +140,18 @@ int main() {
     }
 
     system ("pause");
-    system ("")
+    system ("");
 
-;
-    cout << "---------- to test : add new user medical history and display medical history ----------"
+   // cout << "---------- to test : add new user medical history and display medical history ----------" << endl;
 
-    while (contim == 'n') {
-        cout << " do have any medical history? (y/n) : ";
+  /*while (contim == 'n') {
+        cout << " do you have any medical history? (y/n) : ";
         cin >> nMedHis;
 
         if (nMedHis ==  'y') {
             
         }
-    }
+    }*/
 
 
 
@@ -163,7 +160,7 @@ int main() {
 
     cout << "---------- to test : add new disease ----------"<<endl;
     while (contid == 'n'){
-        cout << " do you want to add new disease? (y/n) : ";
+        cout << " Do you want to add new disease? (y/n) : ";
         cin >> ndisease;
 
         if ( ndisease == 'y'){
@@ -173,7 +170,7 @@ int main() {
            
             cin >> numsym; 
             cin.ignore();
-    for (int j = 0; j < numsym; j++) {
+            for (int j = 0; j < numsym; j++) {
                 cout << "Symptom " << j + 1 << ": ";
                 getline(cin, nsym);
                 Symptom *newSymptom = new Symptom(nsym);
