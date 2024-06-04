@@ -14,7 +14,7 @@ int main()
 {
 
     UserInfo person[100];
-    char nuser, ndisease, conti = 'n', contid = 'n', contis = 'n', contiid = 'n';
+    char nuser, ndisease, conti = 'n', contid = 'n', contis = 'n', contiid = 'n', cont1='n',cont2='n';
     string phonenum, nsym, edisease; 
     int userCount = 0, numsym, numnewdisease = 11, ndis=0, diseaseCount = 100;
     Disease diseases[100];
@@ -200,13 +200,8 @@ int main()
     cin >> contid;
     }
 
-
-
     system ("pause");
     system ("cls");
-
-
-
 
     cout << "---------- to test : add symptom to exist disease ----------"<<endl;
     while (contis =='n'){
@@ -279,7 +274,7 @@ int main()
     system ("cls"); 
 
     cout << "---------- to test : display suggested medicines ----------"<<endl;
-     while (contiid == 'n') 
+     while (cont1 == 'n') 
      {
         cout << "How many symptoms do you have: ";
         cin >> numsym;
@@ -314,7 +309,7 @@ int main()
     system ("cls");
 
     cout << "---------- to test : display suggested clinics ----------"<<endl;
-    while (contiid == 'n') 
+    while (cont2 == 'n') 
     {
         Clinic clinic;
         string state;
@@ -326,7 +321,7 @@ int main()
 
     system ("pause");
     system ("cls");
-    
+
     return 0;
 }
      
