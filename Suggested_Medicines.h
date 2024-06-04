@@ -9,15 +9,18 @@ class Suggested_Medicines
 {
 private:
     string medicines;
-    float duration;
+    string duration;
 public:
-    Suggested_Medicines(string,float);
+    Suggested_Medicines();
+    Suggested_Medicines(string,string);
 
     void setMedicines(string);
-    void setDuration(float);
+    void setDuration(string);
 
     string getMedicines() const;
-    float getDuration() const;
+    string getDuration() const;
+
+    void displayMed() const;
 };
 
 #endif
