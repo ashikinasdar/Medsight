@@ -2,7 +2,9 @@
 #include "MedHistory.h"
 #include "Symptom.h"
 #include "Disease.h"
-#include "Suggestions.h"
+#include "Suggested_Medicines.h"
+#include "Nutritional_Advice.h"
+#include "Clinic.h"
 #include <iostream>
 #include <string>
 #include <fstream>
