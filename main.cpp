@@ -323,6 +323,10 @@ int main()
         clinic.setState(state);
         clinic.displayclinic();
     }
+
+    system ("pause");
+    system ("cls");
+    
     return 0;
 }
      
