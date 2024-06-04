@@ -1,0 +1,11 @@
+Diarrhea,  frequent, loose, or watery bowel movements caused by infections, food intolerances, or medications. Symptoms include cramps, urgency, and dehydration. Treatment focuses on rehydration and addressing the underlying cause.
+Malaria, a mosquito-borne disease causing fever, chills, and flu-like symptoms. It requires prompt treatment to prevent severe complications.
+Common cold, an infection causing nasal congestion, sore throat, and cough. Symptoms typically resolve within a week with rest and symptomatic relief.
+TB, a bacterial infection primarily affecting the lungs, causing cough, fever, and weight loss. It can be serious if left untreated.
+Pneumonia, an infection causing inflammation in the lungs, leading to symptoms like cough, fever, and difficulty breathing. It requires medical attention for treatment.
+Influenza, a viral respiratory infection causing fever, body aches, and fatigue. It spreads easily and can lead to complications in vulnerable populations.
+Cellulitis, a bacterial skin infection causing redness, swelling, and tenderness. It can spread rapidly and may require antibiotics for treatment.
+Chicken Pox, a highly contagious viral infection characterized by itchy red spots or blisters. It typically occurs in childhood and can cause discomfort but usually resolves on its own without serious complications.
+Migraine, a neurological condition causing severe headaches, often accompanied by nausea, sensitivity to light, and sound. It can significantly impair daily functioning.
+Food Poisoning, illness from contaminated food causing symptoms like nausea, vomiting, and diarrhea.
+Asthma,  a chronic respiratory condition causing breathing difficulties, wheezing, and coughing, often triggered by allergies or environmental factors.
