@@ -3,9 +3,9 @@
 #include<string>
 using namespace std;
 
-Clinic :: Clinic () : stateName(" "), clinicName(" "), availability(" "), ClinicNo(0) {}
+Clinic :: Clinic () : stateName(" "), clinicName(" "), availability(" "), ClinicNo("") {}
 
-Clinic :: Clinic(string st=" ",string clna=" ",string avl=" ",string clno=" ")
+Clinic :: Clinic(string st,string clna ,string avl ,string clno )
 {
     stateName = st;
     clinicName = clna;
@@ -25,7 +25,7 @@ void Clinic :: setClinicName(string clna)
 
 void Clinic :: setAvailability(string avl)
 {
-    availability = "24 hours";
+    availability = avl;
 }
 
 void Clinic :: setClinicNo(string clno)
@@ -53,70 +53,88 @@ string Clinic :: getClinicNo() const
     return ClinicNo;
 }
 
-void Clinic :: displayclinic() const
+void Clinic::displayclinic() const
 {
-    if(stateName == "Johor" || stateName=="johor")
+    string clinicName, clinicNo;
+
+    if (stateName == "Johor" || stateName == "johor")
     {
-        Clinic("Johor","Sothern Medical Clinic","24 hours","07 336 1731");
+        clinicName = "Southern Medical Clinic";
+        clinicNo = "07 336 1731";
     }
-    else if(stateName == "Sarawak" || stateName=="sarawak")
+    else if (stateName == "Sarawak" || stateName == "sarawak")
     {
-        Clinic("Sarawak","Kotaraya Clinic","24 hours","08 223 2177");
+        clinicName = "Kotaraya Clinic";
+        clinicNo = "08 223 2177";
     }
-    else if(stateName == "Sabah" || stateName=="sabah")
+    else if (stateName == "Sabah" || stateName == "sabah")
     {
-        Clinic("Sabah","Klinik Butiza Alamesra","24 hours","08 840 2613");
+        clinicName = "Klinik Butiza Alamesra";
+        clinicNo = "08 840 2613";
     }
-    else if(stateName == "Penang" || stateName=="penang")
+    else if (stateName == "Penang" || stateName == "penang")
     {
-        Clinic("Penang","Klinik Metrocare","24 hours","04 505 4365");
+        clinicName = "Klinik Metrocare";
+        clinicNo = "04 505 4365";
     }
-    else if(stateName == "Selangor" || stateName=="selangor")
+    else if (stateName == "Selangor" || stateName == "selangor")
     {
-        Clinic("Selangor","Klinik Anda","24 hours","01 337 4398");
+        clinicName = "Klinik Anda";
+        clinicNo = "01 337 4398";
     }
-    else if(stateName == "Kedah" || stateName=="kedah")
+    else if (stateName == "Kedah" || stateName == "kedah")
     {
-        Clinic("Kedah","Klinik Metrocare","24 hours","04 771 5052");
+        clinicName = "Klinik Metrocare";
+        clinicNo = "04 771 5052";
     }
-    else if(stateName == "Perak" || stateName=="perak")
+    else if (stateName == "Perak" || stateName == "perak")
     {
-        Clinic("Perak","Klinik Zabrina","24 hours","05 282 6771");
+        clinicName = "Klinik Zabrina";
+        clinicNo = "05 282 6771";
     }
-    else if(stateName == "Kelantan" || stateName=="kelantan")
+    else if (stateName == "Kelantan" || stateName == "kelantan")
     {
-        Clinic("Sarawak","Klinik Ikhtiyar","24 hours","09 791 7117");
+        clinicName = "Klinik Ikhtiyar";
+        clinicNo = "09 791 7117";
     }
-    else if(stateName == "Sabah" || stateName=="sabah")
+    else if (stateName == "Pahang" || stateName == "pahang")
     {
-        Clinic("Sabah","Klinik Butiza Alamesra","24 hours","08 840 2613");
+        clinicName = "Klinik Famili";
+        clinicNo = "01 256 93695";
     }
-    else if(stateName == "Pahang" || stateName=="pahang")
+    else if (stateName == "Terengganu" || stateName == "terengganu")
     {
-        Clinic("Pahang","Klinik Famili","24 hours","01 256 93695");
+        clinicName = "Klinik Rohana & Seripah";
+        clinicNo = "09 623 0369";
     }
-    else if(stateName == "Terengganu" || stateName=="terengganu")
+    else if (stateName == "Negeri Sembilan" || stateName == "negeri sembilan")
     {
-        Clinic("Terengganu","Klinik Rohana & Seripah","24 hours","09 623 0369");
+        clinicName = "Klinik Anda";
+        clinicNo = "06 675 8668";
     }
-    else if(stateName == "Negeri Sembilan" || stateName=="negeri sembilan")
+    else if (stateName == "Melaka" || stateName == "melaka")
     {
-        Clinic("Negeri Sembilan","Klinik Anda","24 hours","06 675 8668");
+        clinicName = "Klinik Bukit Katil";
+        clinicNo = "06 252 2000";
     }
-    else if(stateName == "Melaka" || stateName=="melaka")
+    else if (stateName == "Perlis" || stateName == "perlis")
     {
-        Clinic("Melaka","Klinik Bukit Katil","24 hours","06 252 2000");
+        clinicName = "Klinik Anda Kangar";
+        clinicNo = "01 222 97831";
     }
-    else if(stateName == "Perlis" || stateName=="perlis")
+    else if (stateName == "Kualalumpur" || stateName == "kualalumpur")
     {
-        Clinic("Perlis","Klinik Anda Kangar","24 hours","01 222 97831");
+        clinicName = "Klinik Damar";
+        clinicNo = "03 414 6000";
     }
-    else if(stateName == "Kualalumpur" || stateName=="kualalumpur")
+    else
     {
-        Clinic("Kualalumpur","Klinik Damar","24 hours","03 414 6000");
+        cout << "No clinic found for the state: " << stateName << endl;
+        return;
     }
-    cout << "Clinic Name: " << getClinicName() << endl;
-    cout << "State: " << getState() << endl;
-    cout << "Availablity: " << getAvailability() << endl;
-    cout << "Contact no: " << getClinicNo() << endl;
+
+    cout << "Clinic Name: " << clinicName << endl;
+    cout << "State: " << stateName << endl;
+    cout << "Availability: " << "24 hours" << endl;
+    cout << "Contact no: " << clinicNo << endl;
 }
