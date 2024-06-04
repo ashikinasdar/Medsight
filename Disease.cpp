@@ -1,5 +1,6 @@
 #include "Disease.h"
 #include "Symptom.h"
+#include "Suggested_Medicines.h"
 #include <iostream>
 #include <string>
 
@@ -7,7 +8,8 @@ using namespace std;
 
 Disease:: Disease () : nameDisease (""), desc(""){};
 
-Disease::Disease(string nd = "", string des = "") {  
+Disease::Disease(string nd = "", string des = "") 
+{  
     nameDisease = nd;
     desc = des;
     symptomCount = 0;
@@ -16,7 +18,21 @@ Disease::Disease(string nd = "", string des = "") {
     }
 }
 
-void Disease :: setDiseaseName (string nd) {
+Disease::Disease(string nd = "", string des = "", string med=" ", string dur=" ") 
+{  
+    nameDisease = nd;
+    desc = des;
+    medicine->setMedicines(med);
+    medicine->setDuration(dur);
+    symptomCount = 0;
+    for (int i = 0; i < 100; i++) 
+    {
+        symptom[i] = NULL;
+    }
+}
+
+void Disease :: setDiseaseName (string nd) 
+{
         nameDisease = nd;
 }
 
@@ -63,3 +79,10 @@ bool Disease::hasSymptom(const string& symptomName) {
     }
     return false;
 }
+
+void Disease :: display()
+{
+    medicine->displayMed();
+    return;
+}
+

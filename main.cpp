@@ -18,13 +18,15 @@ int main() {
     string phonenum, nsym, edisease; 
     int userCount = 0, numsym, numnewdisease = 11, ndis=0, diseaseCount = 100;
     Disease diseases[100];
-    string name, desc;
+    string name, desc, med, duration;
     ifstream fin("DiseaseList.txt");
 
 
     while(getline(fin, name, ',')) {
-        getline(fin, desc);
-        diseases[ndis++] = Disease(name, desc);
+        getline(fin, desc, '/');
+        getline(fin, med, '/');
+        getline(fin,duration);
+        diseases[ndis++] = Disease(name, desc, med, duration);
     }
 
    /* for (int i = 0; i < 11; i++) {
