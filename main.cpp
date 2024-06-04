@@ -321,6 +321,7 @@ int main()
         cout << "Enter your state:" ;
         cin >> state;
         clinic.setState(state);
+        clinic.displayclinic();
     }
     return 0;
 }
