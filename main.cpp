@@ -2,6 +2,7 @@
 #include "MedHistory.h"
 #include "Symptom.h"
 #include "Disease.h"
+#include "Suggestions.h"
 #include <iostream>
 #include <string>
 using namespace std;
