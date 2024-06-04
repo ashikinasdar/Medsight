@@ -8,25 +8,24 @@ using namespace std;
 class Clinic
 {
 private:
-    string cityName;
     string stateName;
     string clinicName;
     string availability;
-    int ClinicNo;
+    string ClinicNo;
 public:
-    Clinic(string,string,string,string,int);
+    Clinic();
+    Clinic(string,string,string,string);
 
-    void setCity(string);
     void setState(string);
     void setClinicName(string);
     void setAvailability(string);
-    void setClinicNo(int);
+    void setClinicNo(string);
 
-    string getCity() const;
     string getState() const;
     string getClinicName() const;
     string getAvailability() const;
-    int getClinicNo() const;
+    string getClinicNo() const;
+    void displayclinic() const;
 };
 
 #endif
