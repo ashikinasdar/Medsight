@@ -10,23 +10,24 @@
 #include <fstream>
 using namespace std;
 
-int main() {
-    
+int main() 
+{
 
     UserInfo person[100];
     char nuser, ndisease, conti = 'n', contid = 'n', contis = 'n', contiid = 'n';
     string phonenum, nsym, edisease; 
     int userCount = 0, numsym, numnewdisease = 11, ndis=0, diseaseCount = 100;
     Disease diseases[100];
-    string name, desc, med, duration;
+    string name, desc, med, dur;
     ifstream fin("DiseaseList.txt");
 
 
-    while(getline(fin, name, ',')) {
+    while(getline(fin, name, ',')) 
+    {
         getline(fin, desc, '/');
-        getline(fin, med, '/');
-        getline(fin,duration);
-        diseases[ndis++] = Disease(name, desc, med, duration);
+        getline(fin,med,'/');
+        getline(fin,dur);
+        diseases[ndis++] = Disease(name, desc, med, dur);
     }
 
    /* for (int i = 0; i < 11; i++) {
@@ -116,7 +117,7 @@ int main() {
     diseases[10].addSymptom(&cough);
     diseases[10].addSymptom(&shortnessOfBreath);
 
-
+    
     cout << "---------- to test : add new user and display user info ---------- "<< endl;
 
     while (conti == 'n') {
@@ -168,7 +169,6 @@ int main() {
             
         }
     }*/
-
 
 
     system ("pause");
@@ -245,14 +245,8 @@ int main() {
 
     }
 
-
-
     system ("pause");
     system ("cls");
-
-
-
-
 
 
     cout << "---------- to test : identify disease ----------"<<endl;
@@ -280,9 +274,54 @@ int main() {
                 cout << "Possible disease: " << diseases[i].getDiseaseName() << " (" << diseases[i].getDiseaseDesc() << ")" << endl;
             }
         }
+     }
+    system ("pause");
+    system ("cls"); 
 
+    cout << "---------- to test : display suggested medicines ----------"<<endl;
+     while (contiid == 'n') 
+     {
+        cout << "How many symptoms do you have: ";
+        cin >> numsym;
+        cin.ignore();
+
+        Symptom *userSymptoms[100];
+        for (int i = 0; i < numsym; i++) 
+        {
+            cout << "Symptom " << i + 1 << ": ";
+            getline(cin, nsym);
+            userSymptoms[i] = new Symptom(nsym);
+        }
+
+        for (int i = 0; i < diseaseCount; i++) 
+        {
+            bool hasAllSymptoms = true;
+            for (int j = 0; j < numsym; j++) {
+                if (!diseases[i].hasSymptom(userSymptoms[j]->getNameSym())) {
+                    hasAllSymptoms = false;
+                    break;
+                }
+            }
+            if (hasAllSymptoms) 
+            {
+                cout << "Possible disease: " << diseases[i].getDiseaseName() << " (" << diseases[i].getDiseaseDesc() << ")" << endl;
+                cout << "Suggested Medicines: " << endl;
+                diseases[i].display();
+            }
+        }
+     }
     system ("pause");
     system ("cls");
 
+    cout << "---------- to test : display suggested clinics ----------"<<endl;
+    while (contiid == 'n') 
+    {
+        Clinic clinic;
+        string state;
+        cout << "Enter your state:" ;
+        cin >> state;
+        clinic.setState(state);
+    }
     return 0;
-}}
+}
+     
