@@ -5,6 +5,9 @@
 #include <string>
 using namespace  std;
 
+UserInfo :: UserInfo() : name(""), gender(""), nophone(""), email(""), age(0), med(NULL), sym(NULL) {}
+
+
 UserInfo :: UserInfo (string n ="", string g ="", string nop ="", string e ="", int a =0, MedHistory *mH = NULL, Symptom *s = NULL ){
         name = n;
         gender = g;
@@ -51,5 +54,4 @@ void UserInfo :: displayUserInfo () {
         cout << "phone number : "<< nophone << endl;
         cout << "email address : "<< email << endl;
 }
-
 

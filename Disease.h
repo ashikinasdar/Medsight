@@ -3,6 +3,7 @@
 #include "Symptom.h"
 #include <iostream>
 #include <string>
+using namespace std;
 
 class Disease {
     private:
@@ -12,7 +13,8 @@ class Disease {
         int symptomCount;
 
     public: 
-    Disease (string, string);
+    Disease () ;
+    Disease(string nd, string des);
 
     void setDiseaseName (string);
     void setDiseaseDesc (string);
@@ -23,6 +25,8 @@ class Disease {
     void addDisease ();
     void addSymptom (Symptom*);
     void printSymptoms ();
+
+    bool hasSymptom(const string& symptomName); 
 
         
 };

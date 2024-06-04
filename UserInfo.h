@@ -15,7 +15,7 @@ class UserInfo {
     
 
     public :
-    
+    UserInfo();
     UserInfo(string , string, string, string, int, MedHistory*, Symptom*);
     string getNoPhone ();
     void addUserInfo();

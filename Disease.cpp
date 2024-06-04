@@ -5,11 +5,15 @@
 
 using namespace std;
 
-Disease :: Disease(string nd = "", string des = "") {
-        nameDisease = nd;
-        desc = des;
-        symptomCount = 0;
-        symptom[symptomCount] = NULL;
+Disease:: Disease () : nameDisease (""), desc(""){};
+
+Disease::Disease(string nd = "", string des = "") {  
+    nameDisease = nd;
+    desc = des;
+    symptomCount = 0;
+    for (int i = 0; i < 100; i++) {
+        symptom[i] = NULL;
+    }
 }
 
 void Disease :: setDiseaseName (string nd) {
@@ -31,6 +35,8 @@ string Disease ::  getDiseaseDesc () {
 void Disease ::  addDisease (){
         cout << "Enter new disease: ";
         cin >> nameDisease;
+        cout << "Enter disease description : ";
+        cin >> desc;
 } 
 
 void Disease ::  addSymptom(Symptom *symp ) {
@@ -47,4 +53,13 @@ void Disease :: printSymptoms() {
                 cout << "- " << symptom[i]->getNameSym() << endl;
             }
         }
+}
+
+bool Disease::hasSymptom(const string& symptomName) {
+    for (int i = 0; i < symptomCount; i++) {
+        if (symptom[i] && symptom[i]->getNameSym() == symptomName) {
+            return true;
+        }
+    }
+    return false;
 }
